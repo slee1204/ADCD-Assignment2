@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 // import styles from '@/styles/Home.module.css'
 import benjerry from '../data/bj_product.json'
@@ -15,25 +16,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        
+        <h1>Find a variety of Icecream flavours!</h1>
+        
         <div>
-          {
-            benjerry.map((bj, index) => {
-              return (
-                <div key={index}>
-
-                  <Image
-                    src={bj.picture}
-                    alt={bj.name}
-                    width={200}
-                    height={200}
-                  />
-                  <h3>{bj.name}</h3>
-                  <p>{bj.subhead}</p>
-                  <p>{bj.rating}</p>
-                </div>
-              )
-            })
-          }
+          <button>
+            <Link href="/benNjerry">
+              Ben & Jerry's Icecream
+            </Link>
+          </button>
+          <button>
+            <Link href="/haagen_dazs">
+              Haagen Dazs Icecream
+            </Link>
+          </button>
         </div>
       </main>
     </>
