@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import haagen from "../data/hd_product.json";
 
@@ -12,6 +13,11 @@ export default function HD() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <button>
+            <Link href="/benNjerry">
+              Ben & Jerry's Icecream
+            </Link>
+        </button>
         <div>
           {
             haagen.map((hd, index) => {
