@@ -1,12 +1,34 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
-// import styles from '@/styles/Home.module.css'
-import benjerry from '../data/bj_product.json'
-import haagen from '../data/hd_product.json'
-
+import { useState, useEffect } from 'react'
+import Lottie from 'lottie-react'
+import LoadingAnimation from '../public/melting.json'
 
 export default function Home() {
+
+
+  //loading state for lottie and playwright test
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false)
+    }, 1000);
+  }, [])
+
+
+  if (loading){
+    return (
+      <div className="lottie">
+        <Lottie 
+          style={{width:200, height:200}} 
+          animationData={LoadingAnimation}
+          loop={true} />
+      </div>
+    )
+  }
+
+
   return (
     <>
       <Head>
@@ -15,23 +37,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <div className='container landing'>
         
-        <h1>Find a variety of Icecream flavours!</h1>
-        
-        <div>
-          <button>
-            <Link href="/benNjerry">
-              Ben & Jerry's Icecream
-            </Link>
-          </button>
-          <button>
-            <Link href="/haagen_dazs">
-              Haagen Dazs Icecream
-            </Link>
-          </button>
+        <div className="header">
+          <h1>Find a variety of Icecream flavours!</h1>
         </div>
-      </main>
+        <div className='main'>
+          <Link href="/benNjerry" className='btn'>
+            Ben & Jerry's Icecream
+          </Link>
+          <Link href="/haagen_dazs" className='btn'>
+            Haagen Dazs Icecream
+          </Link>
+        </div>
+      </div>
     </>
   )
 }

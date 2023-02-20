@@ -2,7 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import benjerry from "../data/bj_product.json";
-
+import Lottie from 'lottie-react'
+import LoadingAnimation from '../public/melting.json'
 import { useState, useEffect } from 'react'
 
 export default function BJ() {
@@ -12,6 +13,26 @@ export default function BJ() {
   useEffect(() => {
     console.log (bjlist)
   }, [bjlist])
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false)
+    }, 1000);
+  }, [])
+
+
+  if (loading){
+    return (
+      <div className="lottie">
+        <Lottie 
+          style={{width:200, height:200}} 
+          animationData={LoadingAnimation}
+          loop={true} />
+      </div>
+    )
+  }
 
   return (
     <>

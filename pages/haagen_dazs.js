@@ -2,8 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import haagen from "../data/hd_product.json";
-
 import { useState, useEffect } from 'react'
+import Lottie from 'lottie-react'
+import LoadingAnimation from '../public/melting.json'
 
 export default function HD() {
 
@@ -13,7 +14,25 @@ export default function HD() {
     console.log (hdlist)
   }, [hdlist])
 
+  const [loading, setLoading] = useState(true);
 
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false)
+    }, 1000);
+  }, [])
+
+
+  if (loading){
+    return (
+      <div className="lottie">
+        <Lottie 
+          style={{width:200, height:200}} 
+          animationData={LoadingAnimation}
+          loop={true} />
+      </div>
+    )
+  }
 
   return (
     <>
