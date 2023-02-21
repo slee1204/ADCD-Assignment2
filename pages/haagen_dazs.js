@@ -44,8 +44,8 @@ export default function HD() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="navbar">
-        <Link href="/"> &lt;&nbsp;Home </Link>
-        <Link href="/benNjerry">Ben & Jerry's &nbsp;&gt;</Link>
+        <Link href="/">Home </Link>
+        <Link href="/benNjerry">Ben & Jerry's</Link>
       </nav>
 
       <div className="container">

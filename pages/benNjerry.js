@@ -44,8 +44,8 @@ export default function BJ() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className="navbar">
-        <Link href="/"> &lt;&nbsp;Home </Link>
-        <Link href="/haagen_dazs">Haagen Dazs &nbsp;&gt;</Link>
+        <Link href="/">Home </Link>
+        <Link href="/haagen_dazs">Haagen Dazs</Link>
       </nav>
 
       <div className="container">
